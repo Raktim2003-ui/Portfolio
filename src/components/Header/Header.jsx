@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import raktimLogo from "./raktim_portfolio_logo.png"; // Make sure to have a logo image in the specified path
 
 export default function Header() {
   return (
@@ -11,7 +12,7 @@ export default function Header() {
             className="flex items-center absolute left-0 top-1/2 -translate-y-1/2"
           >
             <img
-              src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
+              src={raktimLogo}
               className="mr-3 h-12"
               alt="Logo"
             />
