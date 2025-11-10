@@ -1,0 +1,272 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7f6; /* Light background */
+  color: #333;
+  line-height: 1.6;
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* Header Section */
+.home-header {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #2c3e50; /* Dark blue/grey for header */
+  color: #ffffff;
+  border-radius: 8px 8px 0 0;
+  position: relative; /* For potential background patterns */
+  overflow: hidden; /* To contain background patterns if any */
+}
+
+/* Optional: Subtle background pattern for header */
+.home-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(64, 80, 96, 0.2) 1%, transparent 1%) 0 0 / 20px 20px;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.profile-section {
+  position: relative;
+  z-index: 1; /* Ensure content is above background pattern */
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffffff; /* White border around photo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 2.8em;
+  margin: 10px 0 5px;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 1.4em;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* Summary Section */
+.summary-section {
+  padding: 40px;
+  text-align: center;
+  background-color: #e8f4f2; /* Light green/blue tint */
+  border-bottom: 1px solid #ddd;
+}
+
+.summary-text {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Skills Preview Section */
+.skills-preview-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.skills-preview-section h2 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.skills-preview-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #3498db; /* Blue accent */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill-item {
+  background-color: #ecf0f1; /* Light grey */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-item i {
+  font-size: 3.5em;
+  color: #3498db; /* Blue icon color */
+  margin-bottom: 15px;
+}
+
+.skill-item span {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Call to Action Section */
+.call-to-action-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #2c3e50; /* Dark blue/grey */
+  color: #ffffff;
+  border-radius: 0 0 8px 8px;
+  margin-top: 30px;
+}
+
+.call-to-action-section p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #3498db; /* Blue */
+  color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 0 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+  background-color: #27ae60; /* Green secondary button */
+}
+
+.cta-button.secondary:hover {
+  background-color: #229954; /* Darker green on hover */
+}
+
+/* Footer */
+.home-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+
+.social-links a {
+  color: #555;
+  font-size: 1.5em;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #3498db; /* Blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .name {
+    font-size: 2em;
+  }
+
+  .tagline {
+    font-size: 1.1em;
+  }
+
+  .summary-text {
+    font-size: 1em;
+    padding: 0 15px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr; /* Stack skills on small screens */
+  }
+
+  .cta-button {
+    display: block;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-header {
+    padding: 30px 15px;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .name {
+    font-size: 1.8em;
+  }
+
+  .tagline {
+    font-size: 1em;
+  }
+
+  .summary-section {
+    padding: 30px 15px;
+  }
+
+  .skills-preview-section {
+    padding: 30px 15px;
+  }
+
+  .skills-preview-section h2 {
+    font-size: 1.8em;
+  }
+
+  .skill-item i {
+    font-size: 3em;
+  }
+}
