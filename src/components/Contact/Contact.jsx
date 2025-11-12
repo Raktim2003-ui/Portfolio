@@ -13,11 +13,26 @@ function Contact() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you shortly.'); // Using alert for demo, consider a custom modal in production
-    setFormData({ name: '', email: '', message: '' }); 
+     try {
+    const response = await fetch("http://localhost:8080/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      alert("✅ Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      alert("❌ Failed to send message. Please try again later.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("⚠️ Something went wrong. Please check the console.");
+  }
+    
   };
 
   return (
@@ -97,7 +112,7 @@ function Contact() {
               id="message"
               name="message"
               rows="6"
-              placeholder="Not Implemented Backend Part"
+              placeholder="Typing..."
               value={formData.message}
               onChange={handleChange}
               required
