@@ -16,7 +16,7 @@ function Contact() {
   const handleSubmit =async (e) => {
     e.preventDefault();
      try {
-    const response = await fetch("http://localhost:8080/api/contact", {
+    const response = await fetch("https://portfoliobackendcode-3.onrender.com/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
